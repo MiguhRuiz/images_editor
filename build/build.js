@@ -9750,6 +9750,10 @@ var _reactDom = __webpack_require__(98);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _Header = __webpack_require__(184);
+
+var _Header2 = _interopRequireDefault(_Header);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9771,9 +9775,9 @@ var App = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'h1',
-                null,
-                'Hello World from React'
+                'div',
+                { className: 'App' },
+                _react2.default.createElement(_Header2.default, null)
             );
         }
     }]);
@@ -22418,6 +22422,266 @@ var ReactDOMInvalidARIAHook = {
 
 module.exports = ReactDOMInvalidARIAHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Header() {
+  return _react2.default.createElement(
+    "header",
+    { className: "toolbar toolbar-header image-toolbar" },
+    _react2.default.createElement(
+      "div",
+      { className: "toolbar-actions" },
+      _react2.default.createElement(
+        "div",
+        { className: "btn-group" },
+        _react2.default.createElement(
+          "button",
+          { id: "open-directory", className: "btn btn-default" },
+          _react2.default.createElement("span", { className: "icon icon-folder icon-text" }),
+          "Abrir ubicaci\xF3n"
+        )
+      ),
+      _react2.default.createElement(
+        "button",
+        { id: "save-button", className: "btn btn-default pull-right" },
+        _react2.default.createElement("span", { className: "icon icon-download icon-text" }),
+        "Guardar"
+      ),
+      _react2.default.createElement(
+        "select",
+        { id: "filters", className: "pull-right" },
+        _react2.default.createElement(
+          "option",
+          { value: "normal", selected: true },
+          "normal"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "1977" },
+          "1977"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "aden" },
+          "aden"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "amaro" },
+          "amaro"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "ashby" },
+          "ashby"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "brannan" },
+          "brannan"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "brooklyn" },
+          "brooklyn"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "charmes" },
+          "charmes"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "clarendon" },
+          "clarendon"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "crema" },
+          "crema"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "dogpatch" },
+          "dogpatch"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "earlybird" },
+          "earlybird"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "gingham" },
+          "gingham"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "ginza" },
+          "ginza"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "hefe" },
+          "hefe"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "helena" },
+          "helena"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "hudson" },
+          "hudson"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "inkwell" },
+          "inkwell"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "juno" },
+          "juno"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "kelvin" },
+          "kelvin"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "lark" },
+          "lark"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "lofi" },
+          "lofi"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "ludwig" },
+          "ludwig"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "maven" },
+          "maven"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "mayfair" },
+          "mayfair"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "moon" },
+          "moon"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "nashville" },
+          "nashville"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "perpetua" },
+          "perpetua"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "reyes" },
+          "reyes"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "rise" },
+          "rise"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "sierra" },
+          "sierra"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "skyline" },
+          "skyline"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "slumber" },
+          "slumber"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "stinson" },
+          "stinson"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "sutro" },
+          "sutro"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "toaster" },
+          "toaster"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "valencia" },
+          "valencia"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "vesper" },
+          "vesper"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "walden" },
+          "walden"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "willow" },
+          "willow"
+        ),
+        _react2.default.createElement(
+          "option",
+          { value: "xpro2" },
+          "xpro2"
+        )
+      ),
+      _react2.default.createElement(
+        "label",
+        { className: "pull-right filter-label" },
+        "Filtros: "
+      )
+    )
+  );
+}
+
+exports.default = Header;
 
 /***/ })
 /******/ ]);
