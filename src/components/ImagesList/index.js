@@ -2,16 +2,23 @@ import React from 'react'
 
 import ImageItem from '../ImageItem'
 
-function ImagesList(props) {
-    return(
-        <div className="images-list">
-        {
-            props.images.map(image => (
-                <ImageItem {...image} showPicture={props.showPicture} />
-            ))
-        }
-        </div>
-    )
+class ImagesList extends React.Component {
+    componentDidMount() {
+        const element = document.getElementsByClassName('images-list')[0]
+        const firstChild = element.children[0]
+        firstChild.classList.add('selected')
+    }
+    render() {
+        return(
+            <div className="images-list">
+            {
+                this.props.images.map(image => (
+                    <ImageItem {...image} showPicture={this.props.showPicture} />
+                ))
+            }
+            </div>
+        )
+    }
 }
 
 export default ImagesList

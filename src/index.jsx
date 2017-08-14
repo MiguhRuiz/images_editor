@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Header from './components/Header'
 import ImagesList from './components/ImagesList'
+import ShowImage from './components/ShowImage'
 
 import initialImages from './initialImages'
 
@@ -11,7 +12,7 @@ class App extends React.Component {
         super(props)
         this.state = {
             images: initialImages,
-            currentImage: '#'
+            currentImage: initialImages[0].src
         }
         this.showPicture = this.showPicture.bind(this)
     }
@@ -24,6 +25,7 @@ class App extends React.Component {
                 <Header />
                 <div className="Image-Display">
                     <ImagesList images={this.state.images} showPicture={this.showPicture}/>
+                    <ShowImage url={this.state.currentImage} />
                 </div>
             </div>
         )

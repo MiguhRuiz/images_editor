@@ -6,9 +6,15 @@ class ImageItem extends React.Component {
 
         this.selectPicture = this.selectPicture.bind(this)
     }
-    selectPicture() {
-        const el = document.querySelector('.list-group-item')
-        el.classList.add('selected')
+    selectPicture(event) {
+        const oldEl = document.querySelector('.selected')
+        if(oldEl.classList.contains('selected')) {
+            oldEl.classList.remove('selected')
+        }
+
+        const newEl = event.target
+        newEl.classList.add('selected')
+
         this.props.showPicture(this.props.src)
     }
     render() {
