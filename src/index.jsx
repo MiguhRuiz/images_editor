@@ -15,14 +15,25 @@ class App extends React.Component {
             currentImage: initialImages[0].src
         }
         this.showPicture = this.showPicture.bind(this)
+        this.applyFilter = this.applyFilter.bind(this)
     }
     showPicture(imageUrl) {
         this.setState({ currentImage: imageUrl })
     }
+    applyFilter(filter) {
+        const imageObject = new Image()
+        imageObject.src = this.state.currentImage
+
+        const container = document.getElementById('image-displayed')
+
+        filterous.importImage(imageObject)
+            .applyInstaFilter(filter)
+            .renderHtml(container)
+    }
     render() {
         return(
             <div className="App">
-                <Header />
+                <Header applyFilter={this.applyFilter}/>
                 <div className="Image-Display">
                     <ImagesList images={this.state.images} showPicture={this.showPicture}/>
                     <ShowImage url={this.state.currentImage} />
