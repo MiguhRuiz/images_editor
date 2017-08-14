@@ -15,7 +15,7 @@ function Header() {
               Guardar
             </button>
             <select id="filters" className="pull-right">
-             <option value="normal" selected>normal</option>
+             <option value="normal" value>normal</option>
              <option value="1977">1977</option>
              <option value="aden">aden</option>
              <option value="amaro">amaro</option>
