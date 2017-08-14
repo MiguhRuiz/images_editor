@@ -1,10 +1,12 @@
 import React from 'react'
+import { ipcRenderer } from 'electron'
 
 class Header extends React.Component {
   constructor(props) {
     super(props)
 
     this.setFilter = this.setFilter.bind(this)
+    this.openDialog = this.openDialog.bind(this)
   }
 
   setFilter() {
@@ -12,12 +14,16 @@ class Header extends React.Component {
     this.props.applyFilter(filtertoApply)
   }
 
+  openDialog() {
+    ipcRenderer.send('open-dialog')
+  }
+
   render() {
     return(
       <header className="toolbar toolbar-header image-toolbar">
       <div className="toolbar-actions">
           <div className="btn-group">
-            <button id="open-directory" className="btn btn-default">
+            <button id="open-directory" className="btn btn-default" onClick={this.openDialog}>
               <span className="icon icon-folder icon-text"></span>
               Abrir ubicación
             </button>

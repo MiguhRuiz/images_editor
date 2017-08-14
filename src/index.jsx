@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { ipcRenderer } from 'electron'
 
 import Header from './components/Header'
 import ImagesList from './components/ImagesList'
@@ -29,6 +30,11 @@ class App extends React.Component {
         filterous.importImage(imageObject)
             .applyInstaFilter(filter)
             .renderHtml(container)
+    }
+    componentDidMount() {
+        ipcRenderer.on('load-images', (err, dir, images) => {
+            this.setState({ images, currentImage: images[0].src })
+        })
     }
     render() {
         return(

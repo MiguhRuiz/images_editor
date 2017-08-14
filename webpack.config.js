@@ -20,7 +20,8 @@ const config = {
         new HtmlPlugin({
             template: './src/index.html'
         })
-    ]
+    ],
+    target: 'electron'
 }
 
 module.exports = config
