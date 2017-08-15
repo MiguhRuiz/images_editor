@@ -26,3 +26,19 @@ ipcMain.on('open-dialog', (event) => {
         }
     })
 })
+
+ipcMain.on('save-dialog', (event, args) => {
+    dialog.showSaveDialog(win, {
+        title: 'Selecciona un directorio para guardarla',
+        buttonLabel: 'Guardar Imagen',
+        filters: [{ name: 'picture', extensions: [args.substr(1)] }]
+    }, (path) => {
+        if(path) {
+            event.sender.send('save-image', path)
+        }
+    })
+})
+
+ipcMain.on('show-dialog', (event, args) => {
+    dialog.showMessageBox(win, args)
+})

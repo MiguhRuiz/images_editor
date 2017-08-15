@@ -1,5 +1,8 @@
 import React from 'react'
 import { ipcRenderer } from 'electron'
+import fs from 'fs-extra'
+import path from 'path'
+import { resolveSave } from '../../helpers'
 
 class Header extends React.Component {
   constructor(props) {
@@ -7,6 +10,7 @@ class Header extends React.Component {
 
     this.setFilter = this.setFilter.bind(this)
     this.openDialog = this.openDialog.bind(this)
+    this.saveImage = this.saveImage.bind(this)
   }
 
   setFilter() {
@@ -16,6 +20,26 @@ class Header extends React.Component {
 
   openDialog() {
     ipcRenderer.send('open-dialog')
+  }
+
+  saveImage() {
+    const currentImage = document.getElementById('image-displayed')
+
+    const extension = path.extname(currentImage.dataset.original)
+    ipcRenderer.send('save-dialog', extension)
+  }
+
+  componentDidMount() {
+    ipcRenderer.on('save-image', (event, path) => {
+      let image = document.getElementById('image-displayed').src
+      if(image.indexOf(';base64,') !== -1) {
+        image = image.split(',')[1]
+        fs.writeFile(path, image, 'base64', err => resolveSave(err))
+      } else {
+        image = image.replace('file://', '')
+        fs.copy(path, image, err => resolveSave(err))
+      }
+    })
   }
 
   render() {
@@ -28,7 +52,7 @@ class Header extends React.Component {
               Abrir ubicación
             </button>
           </div>
-          <button id="save-button" className="btn btn-default pull-right">
+          <button id="save-button" className="btn btn-default pull-right" onClick={this.saveImage}>
             <span className="icon icon-download icon-text"></span>
             Guardar
           </button>
