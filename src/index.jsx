@@ -20,6 +20,7 @@ class App extends React.Component {
     }
     showPicture(imageUrl) {
         this.setState({ currentImage: imageUrl })
+        document.getElementById('filters').selectedIndex = 0
     }
     applyFilter(filter) {
         const imageObject = new Image()
